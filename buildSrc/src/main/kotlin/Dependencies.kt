@@ -3,7 +3,7 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 object Dependencies {
 
     private object Versions {
-        const val room = "2.4.2"
+        const val room = "2.5.0-alpha02"
         const val coroutines = "1.5.0"
         const val lifecycleRuntimeKtx = "2.5.0"
         const val lifecycleKtx = "2.2.0"
@@ -11,7 +11,7 @@ object Dependencies {
         const val compose = "1.3.0-alpha01"
         const val composeActivity = "1.5.0"
         const val koin = "3.2.0"
-        const val voyager = "v1.0.0-rc02"
+        const val voyager = "1.0.0-rc02"
         const val voiceTranslation = "0.1.0"
     }
 
@@ -94,5 +94,5 @@ fun DependencyHandler.addCoroutines() {
 fun DependencyHandler.addRoom() {
     implementation(Dependencies.room)
     implementation(Dependencies.roomKtx)
-    kapt(Dependencies.roomCompiler)
+    ksp(Dependencies.roomCompiler)
 }

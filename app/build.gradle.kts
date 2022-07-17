@@ -1,7 +1,7 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-    kotlin("kapt")
+    id("com.google.devtools.ksp")
     id("kotlin-parcelize")
 }
 
@@ -18,6 +18,10 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+    }
+
+    ksp {
+        arg("room.schemaLocation", "$projectDir/schemas")
     }
 
     buildTypes {
@@ -52,7 +56,8 @@ android {
 
     packagingOptions {
         resources {
-            excludes += Android.PackagingOptions.metaInf
+            excludes += Android.PackagingOptions.lgpl
+            excludes += Android.PackagingOptions.indexList
         }
     }
 }

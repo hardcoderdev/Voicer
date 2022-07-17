@@ -19,3 +19,7 @@ fun DependencyHandler.androidTestImplementation(depName: Any) {
 fun DependencyHandler.kapt(depName: Any) {
     add("kapt", depName)
 }
+
+fun DependencyHandler.ksp(depName: Any) {
+    add("ksp", depName)
+}
