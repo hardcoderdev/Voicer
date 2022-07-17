@@ -59,8 +59,10 @@ android {
 
 dependencies {
     addCommonAndroid()
+    addNavigation()
     addDI()
     addRoom()
+    addVoiceTranslation()
     addCoroutines()
     addCompose()
     addLifecycle()

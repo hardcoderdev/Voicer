@@ -11,6 +11,8 @@ object Dependencies {
         const val compose = "1.3.0-alpha01"
         const val composeActivity = "1.5.0"
         const val koin = "3.2.0"
+        const val voyager = "v1.0.0-rc02"
+        const val voiceTranslation = "0.1.0"
     }
 
     const val room = "androidx.room:room-runtime:${Versions.room}"
@@ -38,6 +40,28 @@ object Dependencies {
 
     const val koinCore = "io.insert-koin:koin-core:${Versions.koin}"
     const val koinAndroid = "io.insert-koin:koin-android:${Versions.koin}"
+
+    const val voyagerNavigator = "cafe.adriel.voyager:voyager-navigator:${Versions.voyager}"
+    const val voyagerBottomSheetNavigator = "cafe.adriel.voyager:voyager-bottom-sheet-navigator:${Versions.voyager}"
+    const val voyagerTabNavigator = "cafe.adriel.voyager:voyager-tab-navigator:${Versions.voyager}"
+    const val voyagerTransitions = "cafe.adriel.voyager:voyager-transitions:${Versions.voyager}"
+    const val voyagerAndroidX = "cafe.adriel.voyager:voyager-androidx:${Versions.voyager}"
+    const val voyagerKoin = "cafe.adriel.voyager:voyager-koin:${Versions.voyager}"
+
+    const val voiceTranslation = "com.google.cloud:google-cloud-mediatranslation:${Versions.voiceTranslation}"
+}
+
+fun DependencyHandler.addVoiceTranslation() {
+    implementation(Dependencies.voiceTranslation)
+}
+
+fun DependencyHandler.addNavigation() {
+    implementation(Dependencies.voyagerNavigator)
+    implementation(Dependencies.voyagerBottomSheetNavigator)
+    implementation(Dependencies.voyagerTabNavigator)
+    implementation(Dependencies.voyagerTransitions)
+    implementation(Dependencies.voyagerAndroidX)
+    implementation(Dependencies.voyagerKoin)
 }
 
 fun DependencyHandler.addCompose() {
