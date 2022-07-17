@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Voicer</string>
+    <string name="app_db_name">voicer_db</string>
 </resources>

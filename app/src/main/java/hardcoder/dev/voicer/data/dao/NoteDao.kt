@@ -5,6 +5,7 @@ import hardcoder.dev.voicer.data.entities.NoteEntity
 import hardcoder.dev.voicer.data.entities.VoiceEntity
 import kotlinx.coroutines.flow.Flow
 
+@Dao
 interface NoteDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -19,6 +20,6 @@ interface NoteDao {
     @Query("SELECT * FROM notes")
     fun getAllNotes(): Flow<List<NoteEntity>>
 
-    @Query("SELECT * FROM notes WHERE id = :noteId")
-    fun getAllVoicesInNote(noteId: Int): Flow<VoiceEntity>
+    @Query("SELECT * FROM voice WHERE id = :noteId")
+    fun getAllVoicesInNote(noteId: Int): Flow<List<VoiceEntity>>
 }

@@ -20,6 +20,6 @@ interface FolderDao {
     @Query("SELECT * FROM folders")
     fun getAllFolders(): Flow<List<FolderEntity>>
 
-    @Query("SELECT * FROM folders WHERE id = :folderId")
-    fun getAllNotesInFolder(folderId: Int): Flow<NoteEntity>
+    @Query("SELECT * FROM notes WHERE id = :folderId")
+    fun getAllNotesInFolder(folderId: Int): Flow<List<NoteEntity>>
 }
